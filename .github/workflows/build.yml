@@ -1,0 +1,13 @@
+name: GitHub Actions Demo
+on: 
+  push:
+    branches: [ cicd-test ]
+  pull_request:
+    branches: [ cicd-test ]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - run: echo "${{ github.event.pull_request.number }}"
